@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>গুগল ক্যালেন্ডার মাস্টারিং একাডেমি - ABM Academy</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="গুগল ক্যালেন্ডার দিয়ে জীবন গোছানোর এবং সময় ব্যবস্থাপনার একটি সম্পূর্ণ অফলাইন-ফার্স্ট আধুনিক এডুকেশনাল ওয়েব পোর্টাল।">
+  <meta name="keywords" content="গুগল ক্যালেন্ডার, টাইম ম্যানেজমেন্ট, টাইম ব্লকিং, ABM Academy, Time Architect">
+  <meta name="author" content="Antigravity">
+  
+  <!-- Mobile Web App Capabilities -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#1a73e8">
+  
+  <!-- Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- External CSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Main Mobile App Frame -->
+  <div class="app-container" id="app-frame">
+    
+    <!-- App Header -->
+    <header class="app-header">
+      <div class="brand-section">
+        <div class="app-logo">
+          <!-- Calendar Logo SVG -->
+          <svg viewBox="0 0 24 24" class="app-logo-svg">
+            <rect x="3" y="4" width="18" height="18" rx="4" fill="#1a73e8"/>
+            <path d="M3 9h18v1H3z" fill="#fff" opacity="0.2"/>
+            <circle cx="8" cy="14" r="1.5" fill="#fff"/>
+            <circle cx="12" cy="14" r="1.5" fill="#fff"/>
+            <circle cx="16" cy="14" r="1.5" fill="#fff"/>
+            <circle cx="8" cy="18" r="1.5" fill="#fff"/>
+            <circle cx="12" cy="18" r="1.5" fill="#fff"/>
+            <circle cx="16" cy="18" r="1.5" fill="#fff"/>
+            <path d="M8 2v3M16 2v3" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="app-title-container">
+          <h1 class="app-title-main">ক্যালেন্ডার একাডেমি</h1>
+          <span class="app-subtitle">ABM Academy Portal</span>
+        </div>
+      </div>
+      
+      <!-- Theme Switch Controller -->
+      <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme">
+        <!-- Sun Icon -->
+        <svg viewBox="0 0 24 24" class="sun-icon">
+          <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <!-- Moon Icon -->
+        <svg viewBox="0 0 24 24" class="moon-icon">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Main Dynamic View Container -->
+    <main class="view-container">
+
+      <!-- ==========================================
+           1. VIEW: HOME SCREEN (Dashboard)
+           ========================================== -->
+      <section id="view-home" class="app-view active">
+        <!-- Hero Intro Card -->
+        <div class="hero-card">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <span class="badge">Google Calendar Course</span>
+            <h2>টাইম আর্কিটেক্টঃ গুগল ক্যালেন্ডার মাস্টারক্লাস</h2>
+            <p>আপনার সময় নিয়ন্ত্রণ করুন, প্রোডাক্টিভিটি বাড়ান এবং দৈনন্দিন জীবনকে করে তুলুন আরও সুশৃঙ্খল।</p>
+            <div class="progress-preview">
+              <span class="progress-lbl">কোর্স অগ্রগতি</span>
+              <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="dashboard-progress-fill" style="width: 0%;"></div>
+              </div>
+              <span class="progress-pct" id="dashboard-progress-pct">০% সম্পন্ন</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section Title -->
+        <h3 class="section-title">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20M4 19.5V3a2.5 2.5 0 0 1 2.5-2.5H20v14H6.5" />
+          </svg>
+          কোর্স কন্টেন্টসমূহ (১০টি বিষয়)
+        </h3>
+
+        <!-- Grid of 10 Contents -->
+        <div class="contents-grid">
+          <!-- Content 1: Video lecture -->
+          <div class="content-card" onclick="navigateToView('media', {focus: 'video'})" id="card-video">
+            <div class="content-badge red">লেকচার</div>
+            <div class="content-icon video">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+            <h4 class="content-title">১. ভিডিও টিউটোরিয়াল</h4>
+            <p class="content-desc">গুগল ক্যালেন্ডার মাস্টারিংয়ের সম্পূর্ণ ভিডিও লেকচার।</p>
+          </div>
+
+          <!-- Content 2: Audio guide -->
+          <div class="content-card" onclick="navigateToView('media', {focus: 'audio'})" id="card-audio">
+            <div class="content-badge orange">পডকাস্ট</div>
+            <div class="content-icon audio">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M9 18V5l12-2v13M9 10H5M9 14H5" stroke-linecap="round"/>
+                <circle cx="6" cy="18" r="3"/>
+                <circle cx="18" cy="16" r="3"/>
+              </svg>
+            </div>
+            <h4 class="content-title">২. অডিও পডকাস্ট</h4>
+            <p class="content-desc">জীবন গোছানোর সহজ ব্লুপ্রিন্ট অডিও গাইড।</p>
+          </div>
+
+          <!-- Content 3: Slides 1 -->
+          <div class="content-card" onclick="navigateToView('slides', {deck: 'mastering'})" id="card-slides-mastering">
+            <div class="content-badge blue">স্লাইড</div>
+            <div class="content-icon slide">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <path d="M21 15H3M9 9l3 3 3-3"/>
+              </svg>
+            </div>
+            <h4 class="content-title">৩. স্লাইড ডেক (Mastering)</h4>
+            <p class="content-desc">Mastering Google Calendar স্লাইড শো (১৩ পৃষ্ঠা)।</p>
+          </div>
+
+          <!-- Content 4: Slides 2 -->
+          <div class="content-card" onclick="navigateToView('slides', {deck: 'architect'})" id="card-slides-architect">
+            <div class="content-badge teal">স্লাইড</div>
+            <div class="content-icon slide">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <path d="M21 15H3M9 9l3 3 3-3"/>
+              </svg>
+            </div>
+            <h4 class="content-title">৪. স্লাইড ডেক (Architect)</h4>
+            <p class="content-desc">The Time Architect স্লাইড শো (১৪ পৃষ্ঠা)।</p>
+          </div>
+
+          <!-- Content 5: Mind Map -->
+          <div class="content-card" onclick="openZoomImage('NotebookLM Mind Map.png')" id="card-mindmap">
+            <div class="content-badge purple">মানচিত্র</div>
+            <div class="content-icon mindmap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="12" cy="12" r="3"/>
+                <circle cx="5" cy="5" r="2"/>
+                <circle cx="19" cy="5" r="2"/>
+                <circle cx="5" cy="19" r="2"/>
+                <circle cx="19" cy="19" r="2"/>
+                <path d="M7 7l3.5 3.5M17 7l-3.5 3.5M7 17l3.5-3.5M17 17l-3.5-3.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h4 class="content-title">৫. কোর্স মাইন্ড ম্যাপ</h4>
+            <p class="content-desc">NotebookLM দ্বারা তৈরি ইন্টারকানেক্টেড মাইন্ড ম্যাপ।</p>
+          </div>
+
+          <!-- Content 6: Simple Guide -->
+          <div class="content-card" onclick="openZoomImage('অনলাইন_ক্যালেন্ডার_ব্যবহারের_সহজ_গাইড.png')" id="card-guide-img">
+            <div class="content-badge green">সহজ গাইড</div>
+            <div class="content-icon guide">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <path d="M7 7h10M7 12h10M7 17h6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h4 class="content-title">৬. ক্যালেন্ডার ইনফোগ্রাফিক</h4>
+            <p class="content-desc">অনলাইন ক্যালেন্ডার ব্যবহারের সহজ ভিজ্যুয়াল গাইড।</p>
+          </div>
+
+          <!-- Content 7: Study Docs -->
+          <div class="content-card" onclick="navigateToView('docs')" id="card-docs">
+            <div class="content-badge indigo">নোট্স</div>
+            <div class="content-icon docs">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
+            <h4 class="content-title">৭. স্টাডি গাইড ও ডকস</h4>
+            <p class="content-desc">গুগল ক্যালেন্ডারের গুরুত্বপূর্ণ বিষয়সমূহের লিখিত নোট।</p>
+          </div>
+
+          <!-- Content 8: Keyboard Shortcuts -->
+          <div class="content-card" onclick="navigateToView('interactive', {focus: 'shortcuts'})" id="card-shortcuts">
+            <div class="content-badge dark-blue">শর্টকাট</div>
+            <div class="content-icon keyboard">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <rect x="2" y="4" width="20" height="16" rx="2" ry="2"/>
+                <path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M7 16h10" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h4 class="content-title">৮. কীবোর্ড শর্টকাট</h4>
+            <p class="content-desc">ক্যালেন্ডার দ্রুত অপারেট করার ইন্টারক্টিভ শর্টকাট তালিকা।</p>
+          </div>
+
+          <!-- Content 9: Setup Checklist -->
+          <div class="content-card" onclick="navigateToView('interactive', {focus: 'checklist'})" id="card-checklist">
+            <div class="content-badge pink">চেকলিস্ট</div>
+            <div class="content-icon checklist">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 11 12 14 22 4"/>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+              </svg>
+            </div>
+            <h4 class="content-title">৯. সেটআপ চেকলিস্ট</h4>
+            <p class="content-desc">টাইম আর্কিটেক্ট হিসেবে ক্যালেন্ডার সাজানোর বাস্তব ধাপসমূহ।</p>
+          </div>
+
+          <!-- Content 10: Interactive Quiz -->
+          <div class="content-card" onclick="navigateToView('interactive', {focus: 'quiz'})" id="card-quiz">
+            <div class="content-badge gold">কুইজ</div>
+            <div class="content-icon quiz">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h4 class="content-title">১০. ইন্টারেক্টিভ কুইজ</h4>
+            <p class="content-desc">আপনার গুগল ক্যালেন্ডার জ্ঞানের একটি মূল্যায়ন টেস্ট।</p>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ==========================================
+           2. VIEW: SLIDES (Presentation Viewer)
+           ========================================== -->
+      <section id="view-slides" class="app-view">
+        <div class="back-header">
+          <button class="icon-btn" onclick="navigateToView('home')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="19" y1="12" x2="5" y2="12"/>
+              <polyline points="12 19 5 12 12 5"/>
+            </svg>
+          </button>
+          <h2>স্লাইড ডেক ভিউয়ার</h2>
+        </div>
+
+        <!-- Slide Selector Tabs -->
+        <div class="slide-tabs">
+          <button class="slide-tab-btn active" id="tab-mastering" onclick="switchSlideDeck('mastering')">Mastering Calendar</button>
+          <button class="slide-tab-btn" id="tab-architect" onclick="switchSlideDeck('architect')">The Time Architect</button>
+        </div>
+
+        <!-- Slide Presentation Frame -->
+        <div class="slide-viewer-card">
+          <!-- Slide Image -->
+          <div class="slide-image-container">
+            <img src="" alt="Slide View" id="current-slide-img" class="slide-img">
+            
+            <!-- Slide Image Overlay Actions -->
+            <div class="slide-overlay-actions">
+              <button class="overlay-btn" onclick="zoomCurrentSlide()" title="Zoom Slide">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Slide Navigation Controls -->
+          <div class="slide-nav-controls">
+            <button class="slide-ctrl-btn" onclick="prevSlide()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+              পূর্ববর্তী
+            </button>
+            <div class="slide-counter" id="slide-counter-text">১ / ১৩</div>
+            <button class="slide-ctrl-btn" onclick="nextSlide()">
+              পরবর্তী
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Slide Thumbnails Container -->
+          <div class="slide-thumbnails-grid" id="thumbnails-container">
+            <!-- Dynamically generated thumbnails -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           3. VIEW: MEDIA PLAYERS (Audio & Video)
+           ========================================== -->
+      <section id="view-media" class="app-view">
+        <div class="back-header">
+          <button class="icon-btn" onclick="navigateToView('home')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="19" y1="12" x2="5" y2="12"/>
+              <polyline points="12 19 5 12 12 5"/>
+            </svg>
+          </button>
+          <h2 id="media-view-title">ভিডিও ও অডিও লেকচার</h2>
+        </div>
+
+        <!-- Media Selector Tabs -->
+        <div class="media-tabs">
+          <button class="media-tab-btn active" id="tab-video" onclick="switchMediaTab('video')">🎬 ভিডিও টিউটোরিয়াল</button>
+          <button class="media-tab-btn" id="tab-audio" onclick="switchMediaTab('audio')">🎙️ অডিও পডকাস্ট</button>
+        </div>
+
+        <!-- Video Player Block -->
+        <div class="media-player-block" id="block-video">
+          <div class="player-wrapper">
+            <video id="main-video" src="গুগল_ক্যালেন্ডার_মাস্টারিং.mp4" playsinline></video>
+            <!-- Custom Video Controls Overlay -->
+            <div class="custom-video-controls">
+              <div class="video-progress-container">
+                <div class="video-progress-bar" id="video-progress"></div>
+              </div>
+              <div class="controls-row">
+                <button class="video-play-btn" id="video-play-toggle">
+                  <!-- Play SVG -->
+                  <svg viewBox="0 0 24 24" class="play-svg" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  <!-- Pause SVG -->
+                  <svg viewBox="0 0 24 24" class="pause-svg hidden" width="20" height="20" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                </button>
+                <div class="video-time" id="video-time-text">0:00 / 0:00</div>
+                <button class="video-mute-btn" id="video-mute-toggle">
+                  <!-- Unmute SVG -->
+                  <svg viewBox="0 0 24 24" class="volume-up-svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                  <!-- Mute SVG -->
+                  <svg viewBox="0 0 24 24" class="volume-mute-svg hidden" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5zM23 9l-6 6M17 9l6 6"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="media-info-card">
+            <h4>গুগল ক্যালেন্ডার মাস্টারিং টিউটোরিয়াল</h4>
+            <p>এই ভিডিও টিউটোরিয়ালটিতে গুগল ক্যালেন্ডার ব্যবহারের খুঁটিনাটি খুব সুন্দরভাবে বাংলায় ধাপে ধাপে দেখানো হয়েছে।</p>
+          </div>
+        </div>
+
+        <!-- Audio Player Block -->
+        <div class="media-player-block hidden" id="block-audio">
+          <audio id="main-audio" src="গুগল_ক্যালেন্ডার_দিয়ে_জীবন_গোছানোর_ব্লুপ্রিন্ট.m4a"></audio>
+          
+          <div class="audio-player-card">
+            <!-- Audio Cover Art -->
+            <div class="audio-cover">
+              <!-- Equalizer Waveform Animation -->
+              <div class="wave-visualizer" id="wave-vis">
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+              </div>
+              <svg viewBox="0 0 24 24" class="audio-cover-icon" width="48" height="48" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/>
+              </svg>
+            </div>
+            
+            <div class="audio-meta">
+              <h4>গুগল ক্যালেন্ডার দিয়ে জীবন গোছানোর ব্লুপ্রিন্ট</h4>
+              <p>অডিও পডকাস্ট লেকচার - ABM Academy</p>
+            </div>
+
+            <!-- Custom Audio Controls -->
+            <div class="audio-controls-container">
+              <!-- Playback timeline scrubber -->
+              <div class="audio-timeline-wrapper">
+                <span class="time-current" id="audio-time-curr">0:00</span>
+                <input type="range" class="audio-scrubber" id="audio-scrubber" value="0" min="0" max="100">
+                <span class="time-total" id="audio-time-total">0:00</span>
+              </div>
+
+              <!-- Main buttons row -->
+              <div class="audio-buttons-row">
+                <!-- Speed button -->
+                <button class="audio-speed-btn" id="audio-speed-btn">1.0x</button>
+                
+                <!-- Skip backward 10s -->
+                <button class="audio-skip-btn" onclick="skipAudio(-10)">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M2.5 2v6h6M2.5 8a10 10 0 1 1 2.36 5"/>
+                  </svg>
+                  <span>10s</span>
+                </button>
+
+                <!-- Play/Pause -->
+                <button class="audio-play-circle" id="audio-play-toggle">
+                  <!-- Play SVG -->
+                  <svg viewBox="0 0 24 24" class="play-svg" width="24" height="24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  <!-- Pause SVG -->
+                  <svg viewBox="0 0 24 24" class="pause-svg hidden" width="24" height="24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                </button>
+
+                <!-- Skip forward 10s -->
+                <button class="audio-skip-btn" onclick="skipAudio(10)">
+                  <span>10s</span>
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21.5 2v6h-6M21.5 8a10 10 0 1 0-2.36 5"/>
+                  </svg>
+                </button>
+
+                <!-- Mute toggle -->
+                <button class="audio-mute-btn" id="audio-mute-toggle">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 0 1 0 7.07"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ==========================================
+           4. VIEW: DOCS (Study Guide Q&A Docs)
+           ========================================== -->
+      <section id="view-docs" class="app-view">
+        <div class="back-header">
+          <button class="icon-btn" onclick="navigateToView('home')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="19" y1="12" x2="5" y2="12"/>
+              <polyline points="12 19 5 12 12 5"/>
+            </svg>
+          </button>
+          <h2>শিক্ষামূলক নোট ও ডকস</h2>
+        </div>
+
+        <div class="docs-intro-card">
+          <p>গুগল ক্যালেন্ডার ব্যবহারের মাধ্যমে সময়কে কার্যকরভাবে সাজানোর গুরুত্বপূর্ণ ধারণাসমূহ নিচে দেওয়া হলো। প্রতিটি সেকশনে ক্লিক করে বিস্তারিত পড়ুন।</p>
+        </div>
+
+        <!-- Accordion container for study docs -->
+        <div class="docs-accordion" id="docs-accordion-container">
+          <!-- Dynamically populated from data.js -->
+        </div>
+      </section>
+
+      <!-- ==========================================
+           5. VIEW: INTERACTIVE TOOLS (Quiz, Shortcuts, Checklist)
+           ========================================== -->
+      <section id="view-interactive" class="app-view">
+        <div class="back-header">
+          <button class="icon-btn" onclick="navigateToView('home')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="19" y1="12" x2="5" y2="12"/>
+              <polyline points="12 19 5 12 12 5"/>
+            </svg>
+          </button>
+          <h2 id="interactive-view-title">ইন্টারেক্টিভ টুলস</h2>
+        </div>
+
+        <!-- Sub Tabs for Interactive View -->
+        <div class="interactive-tabs">
+          <button class="inter-tab-btn active" id="tab-shortcuts" onclick="switchInteractiveTab('shortcuts')">⌨️ শর্টকাট</button>
+          <button class="inter-tab-btn" id="tab-checklist" onclick="switchInteractiveTab('checklist')">📝 চেকলিস্ট</button>
+          <button class="inter-tab-btn" id="tab-quiz" onclick="switchInteractiveTab('quiz')">🏆 কুইজ টেস্ট</button>
+        </div>
+
+        <!-- Shortcuts Block -->
+        <div class="interactive-block" id="block-shortcuts">
+          <div class="info-note">গুগল ক্যালেন্ডার খুব দ্রুত ব্যবহারের জন্য এই কীবোর্ড শর্টকাটগুলো মুখস্থ ও প্র্যাকটিস করুন।</div>
+          <div class="shortcuts-list" id="shortcuts-container">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Checklist Block -->
+        <div class="interactive-block hidden" id="block-checklist">
+          <div class="checklist-progress-card">
+            <span>চেকলিস্টের অগ্রগতিঃ</span>
+            <div class="progress-bar-container">
+              <div class="progress-bar-fill" id="checklist-progress-fill" style="width: 0%;"></div>
+            </div>
+            <span id="checklist-progress-text">০ / ৮ সম্পূর্ণ</span>
+          </div>
+
+          <div class="checklist-items" id="checklist-container">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Quiz Block -->
+        <div class="interactive-block hidden" id="block-quiz">
+          <div id="quiz-intro-screen" class="quiz-screen">
+            <div class="quiz-intro-card">
+              <div class="quiz-medal-icon">🏆</div>
+              <h3>টাইম আর্কিটেক্ট কুইজ</h3>
+              <p>গুগল ক্যালেন্ডার কোর্সের উপর আপনার দক্ষতা যাচাই করুন। কুইজে মোট ৫টি প্রশ্ন থাকবে।</p>
+              <button class="primary-action-btn" onclick="startQuiz()">কুইজ শুরু করুন</button>
+            </div>
+          </div>
+
+          <div id="quiz-question-screen" class="quiz-screen hidden">
+            <!-- Question Tracker -->
+            <div class="quiz-tracker-header">
+              <span id="quiz-question-number">প্রশ্ন ১ / ৫</span>
+              <div class="quiz-score-badge">স্কোরঃ <span id="quiz-current-score">০</span></div>
+            </div>
+            
+            <!-- Question Card -->
+            <div class="quiz-question-card">
+              <h4 id="quiz-question-text">ক্যালেন্ডারে নতুন ইভেন্ট তৈরি করার সরাসরি শর্টকাট কোনটি?</h4>
+              <div class="quiz-options-list" id="quiz-options-container">
+                <!-- Dynamically populated options -->
+              </div>
+            </div>
+
+            <!-- Explanation Card (hidden initially) -->
+            <div class="quiz-explanation-card hidden" id="quiz-explanation-box">
+              <span class="exp-title">সঠিক উত্তরের ব্যাখ্যাঃ</span>
+              <p id="quiz-explanation-text">ব্যাখ্যা টেক্সট এখানে আসবে।</p>
+              <button class="primary-action-btn" id="quiz-next-btn" onclick="nextQuizQuestion()">পরবর্তী প্রশ্ন</button>
+            </div>
+          </div>
+
+          <div id="quiz-result-screen" class="quiz-screen hidden">
+            <div class="quiz-result-card">
+              <div class="result-badge-icon" id="result-badge-emoji">🎉</div>
+              <h3 id="result-greeting">চমৎকার!</h3>
+              <p>আপনি কুইজ সম্পন্ন করেছেন।</p>
+              <div class="result-score-box">
+                <span class="score-num" id="result-final-score">৪ / ৫</span>
+                <span class="score-lbl">আপনার অর্জিত স্কোর</span>
+              </div>
+              <p class="result-feedback" id="result-feedback-text">আপনি গুগল ক্যালেন্ডার সম্পর্কে খুব ভালো জ্ঞান অর্জন করেছেন।</p>
+              <button class="primary-action-btn" onclick="resetQuiz()">আবার চেষ্টা করুন</button>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ==========================================
+           6. VIEW: SETTINGS (General Adjustments)
+           ========================================== -->
+      <section id="view-settings" class="app-view">
+        <h2 class="section-title">পোর্টাল সেটিংস ও প্রোফাইল</h2>
+
+        <div class="settings-menu">
+          <!-- Scale Fonts Card -->
+          <div class="settings-card">
+            <div class="settings-group-title">হরফের সাইজ পরিবর্তন (Font Scaling)</div>
+            
+            <div class="settings-row">
+              <div class="settings-label-container">
+                <div class="settings-icon-wrapper">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="4 7 4 4 20 4 20 7"/>
+                    <line x1="9" y1="20" x2="15" y2="20"/>
+                    <line x1="12" y1="4" x2="12" y2="20"/>
+                  </svg>
+                </div>
+                <div class="settings-label">
+                  <span class="settings-title">বাংলা হরফের সাইজ</span>
+                  <span class="settings-desc">নোট ও কন্টেন্ট পড়ার টেক্সট সাইজ সেট করুন</span>
+                </div>
+              </div>
+              <div class="font-btn-container">
+                <button class="font-size-btn" onclick="adjustFontSize(-1)">−</button>
+                <span class="font-size-display" id="bangla-fs-val">16</span>
+                <button class="font-size-btn" onclick="adjustFontSize(1)">+</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile Card -->
+          <div class="settings-card">
+            <div class="settings-group-title">প্রশিক্ষক ও একাডেমি পরিচিতি</div>
+            <div class="settings-row profile-row">
+              <div class="settings-label-container">
+                <div class="settings-icon-wrapper profile-avatar">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                  </svg>
+                </div>
+                <div class="settings-label">
+                  <span class="settings-title trainer-name">ইঞ্জি মোঃ আব্দুল মান্নান</span>
+                  <span class="settings-desc">CEO & Founder, ABM Academy</span>
+                </div>
+              </div>
+              <p class="trainer-bio">প্রোডাক্টিভিটি বৃদ্ধি, সময় পরিকল্পনা এবং প্রফেশনাল সফটওয়্যার ব্যবহারে দক্ষ করে তোলার লক্ষ্যে আমরা প্রতিনিয়ত কাজ করে যাচ্ছি।</p>
+              <a href="https://notebooklm.google.com/notebook/0c2b640b-42bb-49b7-baa0-c1d31064a94f" class="ext-link" target="_blank">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+                আমাদের অফিসিয়াল NotebookLM সোর্স লিংক
+              </a>
+            </div>
+          </div>
+
+          <!-- Advanced Actions -->
+          <div class="settings-card">
+            <div class="settings-group-title">সিস্টেম কন্ট্রোল</div>
+            
+            <div class="settings-row" id="reset-settings-btn" style="cursor: pointer;" onclick="resetAllProgress()">
+              <div class="settings-label-container">
+                <div class="settings-icon-wrapper danger-color">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="3 6 5 6 21 6"/>
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                  </svg>
+                </div>
+                <div class="settings-label">
+                  <span class="settings-title danger-color">অগ্রগতি ও স্কোর রিসেট করুন</span>
+                  <span class="settings-desc">কোর্সের অগ্রগতি, চেকলিস্ট এবং কুইজ স্কোর মুছুন</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Branding footer -->
+          <div class="branding-footer">
+            <div class="branding-logo">
+              <svg viewBox="0 0 24 24" width="24" height="24">
+                <rect x="3" y="4" width="18" height="18" rx="4" fill="#1a73e8"/>
+                <path d="M8 2v3M16 2v3" stroke="#fff" stroke-width="2"/>
+              </svg>
+            </div>
+            <h4>Mastering Google Calendar Academy</h4>
+            <span>Version 1.0.0 • Offline First App</span>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Bottom Navigation Bar (Glassmorphic SPA Menu) -->
+    <nav class="bottom-nav">
+      <!-- Active slider indicator -->
+      <div class="nav-indicator" id="nav-indicator"></div>
+      
+      <!-- Tab Item 1: Home/Dashboard -->
+      <button class="nav-item active" id="btn-nav-home" onclick="navigateToView('home')" data-index="0">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        হোম
+      </button>
+
+      <!-- Tab Item 2: Slides -->
+      <button class="nav-item" id="btn-nav-slides" onclick="navigateToView('slides')" data-index="1">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+          <line x1="9" y1="9" x2="15" y2="9"/>
+          <line x1="9" y1="13" x2="15" y2="13"/>
+          <line x1="9" y1="17" x2="15" y2="17"/>
+        </svg>
+        স্লাইডস
+      </button>
+
+      <!-- Tab Item 3: Media Players (Video/Audio) -->
+      <button class="nav-item" id="btn-nav-media" onclick="navigateToView('media')" data-index="2">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="23 7 16 12 23 17 23 7"/>
+          <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+        </svg>
+        মিডিয়া
+      </button>
+
+      <!-- Tab Item 4: Interactive tools -->
+      <button class="nav-item" id="btn-nav-interactive" onclick="navigateToView('interactive')" data-index="3">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/>
+          <circle cx="12" cy="12" r="10"/>
+        </svg>
+        টুলস
+      </button>
+
+      <!-- Tab Item 5: Settings -->
+      <button class="nav-item" id="btn-nav-settings" onclick="navigateToView('settings')" data-index="4">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+        সেটিংস
+      </button>
+    </nav>
+
+  </div>
+
+  <!-- ==========================================
+       IMAGE ZOOM/VIEW MODAL
+       ========================================== -->
+  <div id="image-zoom-modal" class="zoom-modal hidden">
+    <button class="zoom-close-btn" onclick="closeZoomImage()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="24" height="24">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <div class="zoom-content-container">
+      <img src="" id="zoom-img" alt="Zoomed View">
+    </div>
+    <div class="zoom-help-tip">প্যান বা ড্র্যাগ করতে মাউস/টাচ ব্যবহার করুন</div>
+  </div>
+
+  <!-- Load Data and Logic Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
