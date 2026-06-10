@@ -554,7 +554,7 @@ function openZoomImage(src) {
   // Track Progress
   if (src.includes("Mind Map")) {
     userProgress.mindmap = true;
-  } else if (src.includes("গাইড")) {
+  } else if (src.includes("guide")) {
     userProgress.infographic = true;
   }
   saveProgressData();
